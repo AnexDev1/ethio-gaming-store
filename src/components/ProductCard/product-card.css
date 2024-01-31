@@ -97,7 +97,10 @@ button.add {
   margin: 10px 3px;
   cursor: pointer;
 }
-
+.rate {
+  display: flex;
+  gap: 0.4rem;
+}
 .product:hover .product-like {
   opacity: 1;
 }
