@@ -34,7 +34,8 @@ const Cart = () => {
         callback_url:
           "https://webhook.site/077164d6-29cb-40df-ba29-8a00e59a7e60",
         return_url:
-          "http://localhost/cart" || "https://ethio-gaming-store.vercel.app",
+          "http://localhost:5173/cart" ||
+          "https://ethio-gaming-store.vercel.app",
         "customization[title]": "Payment for my favourite merchant",
         "customization[description]": "I love online payments",
       });
