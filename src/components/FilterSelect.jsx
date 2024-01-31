@@ -2,7 +2,6 @@ import Select from "react-select";
 import { products } from "../utils/products";
 
 const options = [
-  { value: "All", label: "All" },
   { value: "accessories", label: "Accessories" },
   { value: "games", label: "Games" },
   { value: "top-up", label: "top up" },
