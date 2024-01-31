@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../app/features/cart/cartSlice";
+import { IoMdAdd } from "react-icons/io";
 
 const ProductCard = ({ title, productItem }) => {
   const dispatch = useDispatch();
@@ -46,7 +47,7 @@ const ProductCard = ({ title, productItem }) => {
             className="add"
             onClick={() => handelAdd(productItem)}
           >
-            <ion-icon name="add"></ion-icon>
+            <IoMdAdd />
           </button>
         </div>
       </div>

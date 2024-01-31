@@ -30,6 +30,11 @@ import wireless03 from "../Images/wireless-03.png";
 import sofaSlide from "../Images/hero-img.png";
 import watchSlide from "../Images/watch-07.png";
 
+import { FaCar } from "react-icons/fa";
+import { FaCreditCard } from "react-icons/fa";
+import { IoShieldHalfOutline } from "react-icons/io5";
+import { FaHeadset } from "react-icons/fa6";
+
 export const SliderData = [
   {
     id: 1,
@@ -59,25 +64,25 @@ export const SliderData = [
 
 export const serviceData = [
   {
-    icon: <ion-icon name="car"></ion-icon>,
+    icon: <FaCar />,
     title: "Free Shipping",
     subtitle: "Lorem ipsum dolor sit amet.",
     bg: "#fdefe6",
   },
   {
-    icon: <ion-icon name="card"></ion-icon>,
+    icon: <FaCreditCard />,
     title: "Safe Payment",
     subtitle: "Lorem ipsum dolor sit amet.",
     bg: "#ceebe9",
   },
   {
-    icon: <ion-icon name="shield-half-outline"></ion-icon>,
+    icon: <IoShieldHalfOutline />,
     title: "Secure Payment",
     subtitle: "Lorem ipsum dolor sit amet.",
     bg: "#e2f2b2",
   },
   {
-    icon: <ion-icon name="headset"></ion-icon>,
+    icon: <FaHeadset/>,
     title: " Back Guarantee",
     subtitle: "Lorem ipsum dolor sit amet.",
     bg: "#d6e5fb",
