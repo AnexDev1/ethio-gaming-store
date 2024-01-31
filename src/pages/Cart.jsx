@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import {
   addToCart,
   decreaseQty,
@@ -9,6 +10,7 @@ import {
 const Cart = () => {
   const { cartList } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   // middlware to localStorage
   const totalPrice = cartList.reduce(
     (price, item) => price + item.qty * item.price,
@@ -54,7 +56,7 @@ const Cart = () => {
 
       if (result.status === "success") {
         const checkoutUrl = result.data.checkout_url;
-        window.location.href = checkoutUrl;
+        window.open(checkoutUrl);
       } else {
         console.error("Payment error:", result.message);
       }
@@ -137,7 +139,7 @@ const Cart = () => {
                       backgroundColor: "#007bff",
                       color: "#fff",
                       border: "none",
-                      padding: "10px 20px",
+                      padding: "8px 20px",
                       borderRadius: "5px",
                       fontWeight: "bold",
                       cursor: "pointer",
