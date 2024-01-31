@@ -208,7 +208,7 @@ export const discoutProducts = [
     id: "13",
     productName: "PlayStation GiftCard",
     imgUrl: phone04,
-    category: "mobile",
+    category: "top-up",
     price: 1300,
     discount: 5,
     shortDesc:
@@ -322,7 +322,7 @@ export const products = [
     id: "02",
     productName: "Fifa 23 (ORIGIN)",
     imgUrl: gameImg2,
-    category: "sofa",
+    category: "games",
     price: 4100,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -345,7 +345,7 @@ export const products = [
     id: "03",
     productName: "Marvel's Spider-Man Remastered Pc Version",
     imgUrl: gameImg3,
-    category: "sofa",
+    category: "games",
     price: 6100,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -367,7 +367,7 @@ export const products = [
     id: "26",
     productName: "Forza Horizon 5 (XBOX/PC)",
     imgUrl: gameImg4,
-    category: "sofa",
+    category: "games",
     price: 7800,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -459,7 +459,7 @@ export const products = [
     id: "10",
     productName: "Mobile Cooling Fan",
     imgUrl: phone01,
-    category: "mobile",
+    category: "accessories",
     price: 1499,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -503,7 +503,7 @@ export const products = [
     id: "11",
     productName: "Wireless earbuds & Power Bank",
     imgUrl: phone02,
-    category: "mobile",
+    category: "accessories",
     price: 1499,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -526,7 +526,7 @@ export const products = [
     id: "12",
     productName: "Finger Sleeve",
     imgUrl: phone12,
-    category: "mobile",
+    category: "accessories",
     price: 299,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -549,7 +549,7 @@ export const products = [
     id: "13",
     productName: "Gaming Headsets",
     imgUrl: phone13,
-    category: "mobile",
+    category: "accessories",
     price: 799,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -572,7 +572,7 @@ export const products = [
     id: "14",
     productName: "Mobile Game Controller",
     imgUrl: phone05,
-    category: "mobile",
+    category: "accessories",
     price: 1499,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -595,7 +595,7 @@ export const products = [
     id: "15",
     productName: "Mobile gaming Triggers",
     imgUrl: phone06,
-    category: "mobile",
+    category: "accessories",
     price: 299,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
