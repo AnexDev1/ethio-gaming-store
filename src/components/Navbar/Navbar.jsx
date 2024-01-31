@@ -30,8 +30,7 @@ const NavBar = () => {
     >
       <Container className="navbar-container">
         <Navbar.Brand to="/">
-          <ion-icon name="bag"></ion-icon>
-          <h1 className="logo">EthioGamer</h1>
+          <h1 className="logo">Ethio GameStore</h1>
         </Navbar.Brand>
         {/* Media cart and toggle */}
         <div className="d-flex">

@@ -7,6 +7,8 @@ import {
   deleteProduct,
 } from "../app/features/cart/cartSlice";
 import { IoMdAdd } from "react-icons/io";
+import { IonDatetime } from "@ionic/react";
+import { FaMinus } from "react-icons/fa";
 
 const Cart = () => {
   const { cartList } = useSelector((state) => state.cart);
@@ -55,13 +57,19 @@ const Cart = () => {
                               dispatch(addToCart({ product: item, num: 1 }))
                             }
                           >
-                            <i className="fa-solid fa-plus"></i>
+                            <i className="fa-solid fa-minus">
+                              {" "}
+                              <IoMdAdd />
+                            </i>
                           </button>
                           <button
                             className="desCart"
                             onClick={() => dispatch(decreaseQty(item))}
                           >
-                            <i className="fa-solid fa-minus"></i>
+                            <i className="fa-solid fa-minus">
+                              {" "}
+                              <FaMinus />
+                            </i>
                           </button>
                         </Col>
                       </Row>

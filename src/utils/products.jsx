@@ -4,10 +4,6 @@ import gameImg2 from "../Images/gameImg2.jpg";
 import gameImg3 from "../Images/gameImg3.jpg";
 import gameImg4 from "../Images/gameImg4.jpg";
 import productImg02 from "../Images/double-sofa-02.png";
-import productImg03 from "../Images/double-sofa-03.png";
-
-import productImg04 from "../Images/single-sofa-01.jpg";
-import productImg05 from "../Images/single-sofa-02.jpg";
 
 import productImg07 from "../Images/arm-chair-01.jpg";
 import productImg08 from "../Images/arm-chair-02.jpg";
@@ -33,8 +29,6 @@ import watch03 from "../Images/watch-03.jpg";
 import watch04 from "../Images/watch-04.jpg";
 
 import wireless01 from "../Images/wireless-01.png";
-import wireless02 from "../Images/wireless-02.png";
-import wireless03 from "../Images/wireless-03.png";
 
 import sofaSlide from "../Images/hero-img.png";
 import watchSlide from "../Images/watch-07.png";
