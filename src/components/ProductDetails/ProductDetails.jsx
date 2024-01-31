@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import { addToCart } from "../../app/features/cart/cartSlice";
 import "./product-details.css";
+import { FaStar as FullStar } from "react-icons/fa";
 
 const ProductDetails = ({ selectedProduct }) => {
   const dispatch = useDispatch();
@@ -28,11 +29,11 @@ const ProductDetails = ({ selectedProduct }) => {
             <h2>{selectedProduct?.productName}</h2>
             <div className="rate">
               <div className="stars">
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star"></i>
+                <FullStar />
+                <FullStar />
+                <FullStar />
+                <FullStar />
+                <FullStar />
               </div>
               <span>{selectedProduct?.avgRating} ratings</span>
             </div>
