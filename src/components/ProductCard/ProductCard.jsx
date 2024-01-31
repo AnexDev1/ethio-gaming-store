@@ -48,7 +48,7 @@ const ProductCard = ({ title, productItem }) => {
             className="add"
             onClick={() => handelAdd(productItem)}
           >
-            <i className="fa-solid fa-add"> </i>
+            <ion-icon name="add"></ion-icon>
           </button>
         </div>
       </div>
