@@ -56,8 +56,7 @@ const Cart = () => {
 
       if (result.status === "success") {
         const checkoutUrl = result.data.checkout_url;
-        window.open(checkoutUrl, "_blank");
-        newTab.focus();
+        window.location.href = checkoutUrl;
       } else {
         console.error("Payment error:", result.message);
       }
@@ -136,6 +135,7 @@ const Cart = () => {
                   <button
                     className="checkout-btn"
                     onClick={handleCheckout}
+                    onTouchStart={handleCheckout}
                     style={{
                       backgroundColor: "#007bff",
                       color: "#fff",
