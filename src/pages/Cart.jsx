@@ -6,10 +6,6 @@ import {
   decreaseQty,
   deleteProduct,
 } from "../app/features/cart/cartSlice";
-import { IoMdAdd } from "react-icons/io";
-import { IonDatetime } from "@ionic/react";
-import { FaMinus } from "react-icons/fa";
-
 const Cart = () => {
   const { cartList } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
@@ -18,6 +14,52 @@ const Cart = () => {
     (price, item) => price + item.qty * item.price,
     0
   );
+  const handleCheckout = async () => {
+    const myHeaders = new Headers();
+    myHeaders.append(
+      "Authorization",
+      "Bearer CHASECK_TEST-PQAmj6LtxUNhO1kb1KoPO6XoOzjafPo1"
+    );
+    myHeaders.append("Content-Type", "application/json");
+    const randomTxRef =
+      new Date().getTime() + Math.random().toString(36).substring(2, 15);
+
+    try {
+      // Gather payment data from the cart or user input (if needed)
+      const paymentData = JSON.stringify({
+        amount: `${totalPrice}`,
+        currency: "ETB",
+        phone_number: "0912345678",
+        tx_ref: randomTxRef,
+        callback_url:
+          "https://webhook.site/077164d6-29cb-40df-ba29-8a00e59a7e60",
+        return_url: "http://localhost:5173/cart",
+        "customization[title]": "Payment for my favourite merchant",
+        "customization[description]": "I love online payments",
+      });
+      const requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: paymentData,
+        redirect: "follow",
+      };
+
+      const response = await fetch(
+        "https://api.chapa.co/v1/transaction/initialize",
+        requestOptions
+      );
+      const result = await response.json();
+
+      if (result.status === "success") {
+        const checkoutUrl = result.data.checkout_url;
+        window.location.href = checkoutUrl;
+      } else {
+        console.error("Payment error:", result.message);
+      }
+    } catch (error) {
+      console.error("Payment error:", error);
+    }
+  };
   useEffect(() => {
     window.scrollTo(0, 0);
     // if(CartItem.length ===0) {
@@ -85,6 +127,9 @@ const Cart = () => {
               <div className=" d_flex">
                 <h4>Total Price :</h4>
                 <h3>{totalPrice}.00 Birr</h3>
+                <button className="checkout-btn" onClick={handleCheckout}>
+                  Checkout
+                </button>
               </div>
             </div>
           </Col>
