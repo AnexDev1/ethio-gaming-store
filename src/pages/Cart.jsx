@@ -6,6 +6,7 @@ import {
   decreaseQty,
   deleteProduct,
 } from "../app/features/cart/cartSlice";
+import { IoMdAdd } from "react-icons/io";
 
 const Cart = () => {
   const { cartList } = useSelector((state) => state.cart);

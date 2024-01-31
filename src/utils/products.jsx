@@ -17,6 +17,9 @@ import phone04 from "../Images/phone-04.jpg";
 import phone05 from "../Images/phone-05.jpg";
 import phone06 from "../Images/phone-06.jpg";
 import phone08 from "../Images/phone-08.png";
+import phone09 from "../Images/phone-09.png";
+import phone10 from "../Images/phone-10.png";
+import phone11 from "../Images/phone-11.png";
 
 import watch01 from "../Images/watch-01.jpg";
 import watch02 from "../Images/watch-02.jpg";
@@ -82,7 +85,7 @@ export const serviceData = [
     bg: "#e2f2b2",
   },
   {
-    icon: <FaHeadset/>,
+    icon: <FaHeadset />,
     title: " Back Guarantee",
     subtitle: "Lorem ipsum dolor sit amet.",
     bg: "#d6e5fb",
@@ -111,10 +114,10 @@ export const discoutProducts = [
   },
   {
     id: "02",
-    productName: "Rivet Bigelow Modern ",
+    productName: "CALL OF DUTY MOBILE CP",
     imgUrl: productImg02,
     category: "sofa",
-    price: 253,
+    price: 550,
     discount: 20,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -134,10 +137,10 @@ export const discoutProducts = [
   },
   {
     id: "08",
-    productName: "Baltsar Chair",
+    productName: "FREEFIRE DIAMONDS",
     imgUrl: productImg08,
     category: "chair",
-    price: 89,
+    price: 400,
     discount: 15,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -157,10 +160,10 @@ export const discoutProducts = [
   },
   {
     id: "09",
-    productName: "Helmar Chair",
+    productName: "STEAM WALLET CODE",
     imgUrl: productImg09,
     category: "chair",
-    price: 112,
+    price: 1300,
     discount: 35,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -180,10 +183,10 @@ export const discoutProducts = [
   },
   {
     id: "12",
-    productName: "Realme 8",
+    productName: "Apple GiftCard US",
     imgUrl: phone03,
     category: "mobile",
-    price: 599,
+    price: 3250,
     discount: 10,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -203,10 +206,79 @@ export const discoutProducts = [
   },
   {
     id: "13",
-    productName: "One Plus Nord",
+    productName: "PlayStation GiftCard",
     imgUrl: phone04,
     category: "mobile",
-    price: 799,
+    price: 1300,
+    discount: 5,
+    shortDesc:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+    reviews: [
+      {
+        rating: 4.8,
+        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      },
+      {
+        rating: 4.9,
+        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      },
+    ],
+    avgRating: 4.8,
+  },
+  {
+    id: "14",
+    productName: "fortnite vbuck redeem codes",
+    imgUrl: phone09,
+    category: "mobile",
+    price: 1300,
+    discount: 5,
+    shortDesc:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+    reviews: [
+      {
+        rating: 4.8,
+        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      },
+      {
+        rating: 4.9,
+        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      },
+    ],
+    avgRating: 4.8,
+  },
+  {
+    id: "15",
+    productName: "Valorant Point (VP) GiftCard",
+    imgUrl: phone10,
+    category: "mobile",
+    price: 600,
+    discount: 5,
+    shortDesc:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+    reviews: [
+      {
+        rating: 4.8,
+        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      },
+      {
+        rating: 4.9,
+        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      },
+    ],
+    avgRating: 4.8,
+  },
+  {
+    id: "16",
+    productName: "1 Month Xbox Game Pass Ultimate",
+    imgUrl: phone11,
+    category: "mobile",
+    price: 1300,
     discount: 5,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
