@@ -56,7 +56,7 @@ const Cart = () => {
 
       if (result.status === "success") {
         const checkoutUrl = result.data.checkout_url;
-        window.open(checkoutUrl);
+        window.open(checkoutUrl, "_blank");
       } else {
         console.error("Payment error:", result.message);
       }
