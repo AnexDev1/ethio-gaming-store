@@ -3,8 +3,8 @@ import { products } from "../utils/products";
 
 const options = [
   { value: "accessories", label: "Accessories" },
+  { value: "top-up", label: "Top Up" },
   { value: "games", label: "Games" },
-  { value: "top-up", label: "top up" },
 ];
 
 const customStyles = {
@@ -38,6 +38,8 @@ const FilterSelect = ({ setFilterList }) => {
     setFilterList(
       products.filter((item) => item.category === selectedOption.value)
     );
+    console.log(selectedOption.value);
+    console.log(products);
   };
   return (
     <Select
