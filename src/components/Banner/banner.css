@@ -3,10 +3,7 @@
   height: 100%;
   object-fit: cover;
 }
-.image-container h2 {
-  font-family: "Lato";
-  font-weight: 700;
-}
+
 .overlay {
   position: absolute;
   top: 0;
