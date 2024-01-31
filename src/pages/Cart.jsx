@@ -33,8 +33,8 @@ const Cart = () => {
         currency: "ETB",
         phone_number: "0912345678",
         tx_ref: randomTxRef,
-        // callback_url:
-        //   "https://webhook.site/077164d6-29cb-40df-ba29-8a00e59a7e60",
+        callback_url:
+          "https://webhook.site/077164d6-29cb-40df-ba29-8a00e59a7e60",
         return_url:
           "https://ethio-gaming-store.vercel.app" ||
           "http://localhost:5173/cart",
@@ -56,7 +56,8 @@ const Cart = () => {
 
       if (result.status === "success") {
         const checkoutUrl = result.data.checkout_url;
-        window.location.href = checkoutUrl;
+        window.open(checkoutUrl, "_blank");
+        newTab.focus();
       } else {
         console.error("Payment error:", result.message);
       }
