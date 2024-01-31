@@ -57,19 +57,13 @@ const Cart = () => {
                               dispatch(addToCart({ product: item, num: 1 }))
                             }
                           >
-                            <i className="fa-solid fa-minus">
-                              {" "}
-                              <IoMdAdd />
-                            </i>
+                            <i className="fa-solid fa-add"> </i>
                           </button>
                           <button
                             className="desCart"
                             onClick={() => dispatch(decreaseQty(item))}
                           >
-                            <i className="fa-solid fa-minus">
-                              {" "}
-                              <FaMinus />
-                            </i>
+                            <i className="fa-solid fa-minus"> </i>
                           </button>
                         </Col>
                       </Row>

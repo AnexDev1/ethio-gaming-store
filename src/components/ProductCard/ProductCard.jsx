@@ -5,8 +5,7 @@ import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../app/features/cart/cartSlice";
 import { IoMdAdd } from "react-icons/io";
-import { FaRegStar as EmptyStar } from "react-icons/fa";
-import { FaStar as FullStar } from "react-icons/fa";
+import { FaRegStar } from "react-icons/fa";
 
 const ProductCard = ({ title, productItem }) => {
   const dispatch = useDispatch();
@@ -35,11 +34,11 @@ const ProductCard = ({ title, productItem }) => {
       <div className="product-details">
         <h3 onClick={() => handelClick()}>{productItem.productName}</h3>
         <div className="rate">
-          <EmptyStar />
-          <EmptyStar />
-          <EmptyStar />
-          <EmptyStar />
-          <EmptyStar />
+          <i className="fa fa-star"></i>
+          <i className="fa fa-star"></i>
+          <i className="fa fa-star"></i>
+          <i className="fa fa-star"></i>
+          <i className="fa fa-star"></i>
         </div>
         <div className="price">
           <h4>{productItem.price} Birr</h4>
@@ -49,7 +48,7 @@ const ProductCard = ({ title, productItem }) => {
             className="add"
             onClick={() => handelAdd(productItem)}
           >
-            <IoMdAdd />
+            <i className="fa-solid fa-add"> </i>
           </button>
         </div>
       </div>

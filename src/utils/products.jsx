@@ -33,11 +33,6 @@ import wireless01 from "../Images/wireless-01.png";
 import sofaSlide from "../Images/hero-img.png";
 import watchSlide from "../Images/watch-07.png";
 
-import { FaCar } from "react-icons/fa";
-import { FaCreditCard } from "react-icons/fa";
-import { IoShieldHalfOutline } from "react-icons/io5";
-import { FaHeadset } from "react-icons/fa6";
-
 export const SliderData = [
   {
     id: 1,
@@ -67,25 +62,25 @@ export const SliderData = [
 
 export const serviceData = [
   {
-    icon: <FaCar />,
+    icon: <i className="fa-solid fa-car"> </i>,
     title: "Free Shipping",
     subtitle: "Lorem ipsum dolor sit amet.",
     bg: "#fdefe6",
   },
   {
-    icon: <FaCreditCard />,
+    icon: <i className="fa-solid fa-credit-card-alt"> </i>,
     title: "Safe Payment",
     subtitle: "Lorem ipsum dolor sit amet.",
     bg: "#ceebe9",
   },
   {
-    icon: <IoShieldHalfOutline />,
+    icon: <i className="fa-solid fa-shield"> </i>,
     title: "Secure Payment",
     subtitle: "Lorem ipsum dolor sit amet.",
     bg: "#e2f2b2",
   },
   {
-    icon: <FaHeadset />,
+    icon: <i className="fa-solid fa-headphones"> </i>,
     title: " Back Guarantee",
     subtitle: "Lorem ipsum dolor sit amet.",
     bg: "#d6e5fb",

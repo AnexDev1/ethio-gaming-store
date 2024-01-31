@@ -29,11 +29,11 @@ const ProductDetails = ({ selectedProduct }) => {
             <h2>{selectedProduct?.productName}</h2>
             <div className="rate">
               <div className="stars">
-                <FullStar />
-                <FullStar />
-                <FullStar />
-                <FullStar />
-                <FullStar />
+                <i className="fa fa-star"></i>
+                <i className="fa fa-star"></i>
+                <i className="fa fa-star"></i>
+                <i className="fa fa-star"></i>
+                <i className="fa fa-star"></i>
               </div>
               <span>{selectedProduct?.avgRating} ratings</span>
             </div>
