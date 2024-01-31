@@ -21,11 +21,11 @@ const Home = () => {
         productItems={discoutProducts}
       />
       <Section
-        title="New Arrivals"
+        title="Accessories"
         bgColor="white"
         productItems={newArrivalData}
       />
-      <Section title="Best Sales" bgColor="#f6f9fc" productItems={bestSales} />
+      <Section title="Games" bgColor="#f6f9fc" productItems={bestSales} />
     </Fragment>
   );
 };
