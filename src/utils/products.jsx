@@ -97,7 +97,7 @@ export const discoutProducts = [
     id: "01",
     productName: "PUBG MOBILE UC ",
     imgUrl: productImg01,
-    category: "sofa",
+    category: "top-up",
     price: 600,
     discount: 30,
     shortDesc:
@@ -116,7 +116,7 @@ export const discoutProducts = [
     id: "02",
     productName: "CALL OF DUTY MOBILE CP",
     imgUrl: productImg02,
-    category: "sofa",
+    category: "top-up",
     price: 550,
     discount: 20,
     shortDesc:
@@ -139,7 +139,7 @@ export const discoutProducts = [
     id: "08",
     productName: "FREEFIRE DIAMONDS",
     imgUrl: productImg08,
-    category: "chair",
+    category: "top-up",
     price: 400,
     discount: 15,
     shortDesc:
@@ -162,7 +162,7 @@ export const discoutProducts = [
     id: "09",
     productName: "STEAM WALLET CODE",
     imgUrl: productImg09,
-    category: "chair",
+    category: "top-up",
     price: 1300,
     discount: 35,
     shortDesc:
@@ -185,7 +185,7 @@ export const discoutProducts = [
     id: "12",
     productName: "Apple Giftcards US",
     imgUrl: phone03,
-    category: "mobile",
+    category: "top-up",
     price: 1499,
     discount: 10,
     shortDesc:
@@ -231,7 +231,7 @@ export const discoutProducts = [
     id: "14",
     productName: "fortnite vbuck redeem codes",
     imgUrl: phone09,
-    category: "mobile",
+    category: "top-up",
     price: 1300,
     discount: 5,
     shortDesc:
@@ -254,7 +254,7 @@ export const discoutProducts = [
     id: "15",
     productName: "Valorant Point (VP) GiftCard",
     imgUrl: phone10,
-    category: "mobile",
+    category: "top-up",
     price: 600,
     discount: 5,
     shortDesc:
@@ -277,7 +277,7 @@ export const discoutProducts = [
     id: "16",
     productName: "1 Month Xbox Game Pass Ultimate",
     imgUrl: phone11,
-    category: "mobile",
+    category: "top-up",
     price: 1300,
     discount: 5,
     shortDesc:
@@ -303,7 +303,7 @@ export const products = [
     id: "01",
     productName: "Minecraft Java & Bedrock Edition CD-KEY",
     imgUrl: gameImg,
-    category: "sofa",
+    category: "games",
     price: 193,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
