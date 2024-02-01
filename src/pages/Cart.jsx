@@ -57,7 +57,6 @@ const Cart = () => {
       if (result.status === "success") {
         const checkoutUrl = result.data.checkout_url;
         window.location.href = checkoutUrl;
-        // navigate(checkoutUrl);
       } else {
         console.error("Payment error:", result.message);
       }
