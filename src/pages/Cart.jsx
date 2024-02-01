@@ -135,7 +135,6 @@ const Cart = () => {
                   <button
                     className="checkout-btn"
                     onClick={handleCheckout}
-                    onTouchStart={handleCheckout}
                     style={{
                       backgroundColor: "#007bff",
                       color: "#fff",
