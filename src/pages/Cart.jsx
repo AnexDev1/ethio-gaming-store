@@ -7,44 +7,30 @@ import {
   decreaseQty,
   deleteProduct,
 } from "../app/features/cart/cartSlice";
+
 const Cart = () => {
   const { cartList } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  // middlware to localStorage
+
   const totalPrice = cartList.reduce(
     (price, item) => price + item.qty * item.price,
     0
   );
-  const handleCheckout = async () => {
-    const myHeaders = new Headers();
-    myHeaders.append(
-      "Authorization",
-      "Bearer CHASECK_TEST-PQAmj6LtxUNhO1kb1KoPO6XoOzjafPo1"
-    );
-    myHeaders.append("Content-Type", "application/json");
-    const randomTxRef =
-      new Date().getTime() + Math.random().toString(36).substring(2, 15);
 
+  const redirectToCheckout = async (paymentData) => {
     try {
-      // Gather payment data from the cart or user input (if needed)
-      const paymentData = JSON.stringify({
-        amount: `${totalPrice}`,
-        currency: "ETB",
-        phone_number: "0912345678",
-        tx_ref: randomTxRef,
-        callback_url:
-          "https://webhook.site/077164d6-29cb-40df-ba29-8a00e59a7e60",
-        return_url:
-          "https://ethio-gaming-store.vercel.app" ||
-          "http://localhost:5173/cart",
-        "customization[title]": "Payment for my favourite merchant",
-        "customization[description]": "I love online payments",
-      });
+      const myHeaders = new Headers();
+      myHeaders.append(
+        "Authorization",
+        "Bearer CHASECK_TEST-PQAmj6LtxUNhO1kb1KoPO6XoOzjafPo1"
+      );
+      myHeaders.append("Content-Type", "application/json");
+
       const requestOptions = {
         method: "POST",
         headers: myHeaders,
-        body: paymentData,
+        body: JSON.stringify(paymentData),
         redirect: "follow",
       };
 
@@ -64,13 +50,30 @@ const Cart = () => {
       console.error("Payment error:", error);
     }
   };
+
+  const handleCheckout = () => {
+    const randomTxRef =
+      new Date().getTime() + Math.random().toString(36).substring(2, 15);
+
+    const paymentData = {
+      amount: `${totalPrice}`,
+      currency: "ETB",
+      phone_number: "0912345678",
+      tx_ref: randomTxRef,
+      callback_url: "https://webhook.site/077164d6-29cb-40df-ba29-8a00e59a7e60",
+      return_url:
+        "https://ethio-gaming-store.vercel.app" || "http://localhost:5173/cart",
+      "customization[title]": "Payment for my favourite merchant",
+      "customization[description]": "I love online payments",
+    };
+
+    redirectToCheckout(paymentData);
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
-    // if(CartItem.length ===0) {
-    //   const storedCart = localStorage.getItem("cartItem");
-    //   setCartItem(JSON.parse(storedCart));
-    // }
   }, []);
+
   return (
     <section className="cart-items">
       <Container>
