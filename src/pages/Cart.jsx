@@ -11,7 +11,6 @@ import {
 const Cart = () => {
   const { cartList } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const totalPrice = cartList.reduce(
     (price, item) => price + item.qty * item.price,
@@ -142,7 +141,7 @@ const Cart = () => {
                 className="checkout-btn"
                 onClick={handleCheckout}
                 style={{
-                  backgroundColor: "#0f3460",
+                  backgroundColor: "#13427B",
                   color: "#fff",
                   border: "none",
                   padding: "8px 20px",
