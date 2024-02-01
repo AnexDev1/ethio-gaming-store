@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import {
   addToCart,
   decreaseQty,
@@ -18,21 +17,21 @@ const Cart = () => {
   );
 
   const redirectToCheckout = async (paymentData) => {
+    const myHeaders = new Headers();
+    myHeaders.append(
+      "Authorization",
+      "Bearer CHASECK_TEST-PQAmj6LtxUNhO1kb1KoPO6XoOzjafPo1"
+    );
+    myHeaders.append("Content-Type", "application/json");
+
+    const requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: JSON.stringify(paymentData),
+      redirect: "follow",
+    };
+
     try {
-      const myHeaders = new Headers();
-      myHeaders.append(
-        "Authorization",
-        "Bearer CHASECK_TEST-PQAmj6LtxUNhO1kb1KoPO6XoOzjafPo1"
-      );
-      myHeaders.append("Content-Type", "application/json");
-
-      const requestOptions = {
-        method: "POST",
-        headers: myHeaders,
-        body: JSON.stringify(paymentData),
-        redirect: "follow",
-      };
-
       const response = await fetch(
         "https://api.chapa.co/v1/transaction/initialize",
         requestOptions
