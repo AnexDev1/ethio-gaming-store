@@ -42,7 +42,7 @@ const Cart = () => {
 
       if (result.status === "success") {
         const checkoutUrl = result.data.checkout_url;
-        window.location.href = checkoutUrl;
+        window.location.assign(checkoutUrl);
       } else {
         console.error("Payment error:", result.message);
       }
