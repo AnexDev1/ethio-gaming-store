@@ -56,7 +56,8 @@ const Cart = () => {
 
       if (result.status === "success") {
         const checkoutUrl = result.data.checkout_url;
-        window.location.href = checkoutUrl;
+        // window.location.href = checkoutUrl;
+        navigate(checkoutUrl);
       } else {
         console.error("Payment error:", result.message);
       }
@@ -131,26 +132,27 @@ const Cart = () => {
               <div className=" d_flex">
                 <h4>Total Price :</h4>
                 <h3>{totalPrice}.00 Birr</h3>
-                {totalPrice > 1 && (
-                  <button
-                    className="checkout-btn"
-                    onClick={handleCheckout}
-                    style={{
-                      backgroundColor: "#007bff",
-                      color: "#fff",
-                      border: "none",
-                      padding: "8px 20px",
-                      borderRadius: "5px",
-                      fontWeight: "bold",
-                      cursor: "pointer",
-                      textAlign: "center",
-                    }}
-                  >
-                    Checkout
-                  </button>
-                )}
               </div>
             </div>
+            {totalPrice > 1 && (
+              <button
+                className="checkout-btn"
+                onClick={handleCheckout}
+                style={{
+                  backgroundColor: "#0f3460",
+                  color: "#fff",
+                  border: "none",
+                  padding: "8px 20px",
+                  borderRadius: "5px",
+                  fontWeight: "bold",
+                  cursor: "pointer",
+                  textAlign: "center",
+                  marginLeft: "1rem",
+                }}
+              >
+                Checkout
+              </button>
+            )}
           </Col>
         </Row>
       </Container>
