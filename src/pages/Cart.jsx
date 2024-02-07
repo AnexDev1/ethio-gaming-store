@@ -1,3 +1,5 @@
+// Cart.jsx
+
 import { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
@@ -6,6 +8,9 @@ import {
   decreaseQty,
   deleteProduct,
 } from "../app/features/cart/cartSlice";
+import Chapa from "chapa";
+
+const myChapa = new Chapa("CHASECK_TEST-PQAmj6LtxUNhO1kb1KoPO6XoOzjafPo1"); // Replace with your actual key
 
 const Cart = () => {
   const { cartList } = useSelector((state) => state.cart);
@@ -15,58 +20,47 @@ const Cart = () => {
     (price, item) => price + item.qty * item.price,
     0
   );
-
-  const redirectToCheckout = async (paymentData) => {
-    const myHeaders = new Headers();
-    myHeaders.append(
-      "Authorization",
-      "Bearer CHASECK_TEST-PQAmj6LtxUNhO1kb1KoPO6XoOzjafPo1"
+  const handleCheckout = async () => {
+    // Calculate total amount and other required payment data
+    const totalPrice = cartList.reduce(
+      (acc, item) => acc + item.qty * item.price,
+      0
     );
-    myHeaders.append("Content-Type", "application/json");
+    const currency = "ETB"; // Replace with your actual currency
+    const phone_number = "0912345678"; // Replace with a valid phone number
 
-    const requestOptions = {
-      method: "POST",
-      headers: myHeaders,
-      body: JSON.stringify(paymentData),
-      redirect: "follow",
+    // Generate a unique transaction reference (use a secure library in production)
+    const txRef = Math.random().toString(36).substring(2, 15);
+
+    const paymentData = {
+      amount: totalPrice.toString(),
+      first_name: "anwar",
+      last_name: "dev",
+      currency,
+      phone_number,
+      email: "test@gmail.com",
+      tx_ref: txRef,
+      callback_url: "https://your-backend-callback-url", // Replace with your backend callback URL
+      return_url: "http://localhost:5173/cart", // Replace with your success page URL
+      customization: {
+        title: "Payment for my favorite merchant",
+        description: "I love online payments",
+      },
     };
 
     try {
-      const response = await fetch(
-        "https://api.chapa.co/v1/transaction/initialize",
-        requestOptions
-      );
-      const result = await response.json();
+      const response = await myChapa.initialize(paymentData);
 
-      if (result.status === "success") {
-        const checkoutUrl = result.data.checkout_url;
-        window.location.assign(checkoutUrl);
+      if (response.status === "success") {
+        window.location.assign(response.data.checkout_url); // Redirect to Chapa checkout
       } else {
-        console.error("Payment error:", result.message);
+        console.error("Payment initialization failed:", response.message);
+        // Handle payment failure appropriately (e.g., display an error message to the user)
       }
     } catch (error) {
       console.error("Payment error:", error);
+      // Handle generic error
     }
-  };
-
-  const handleCheckout = () => {
-    const randomTxRef =
-      new Date().getTime() + Math.random().toString(36).substring(2, 15);
-
-    const paymentData = {
-      amount: `${totalPrice}`,
-      currency: "ETB",
-      phone_number: "0912345678",
-      tx_ref: randomTxRef,
-      callback_url: "https://webhook.site/077164d6-29cb-40df-ba29-8a00e59a7e60",
-      return_url:
-        "https://ethio-gaming-store.vercel.app/cart" ||
-        "http://localhost:5173/cart",
-      "customization[title]": "Payment for my favourite merchant",
-      "customization[description]": "I love online payments",
-    };
-
-    redirectToCheckout(paymentData);
   };
 
   useEffect(() => {
