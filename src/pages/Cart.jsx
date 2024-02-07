@@ -48,28 +48,14 @@ const Cart = () => {
       },
     };
 
-    const requestOptions = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        // Add other required headers here
-      },
-      body: JSON.stringify(paymentData),
-      mode: "no-cors", // Setting the request mode to no-cors
-    };
-
     try {
-      const response = await fetch(
-        "https://api.chapa.co/v1/transaction/initialize",
-        requestOptions
-      );
+      const response = await myChapa.initialize(paymentData);
 
-      if (response.status === 200) {
-        console.log("Payment initialized successfully");
-        // Handle payment initialization success
+      if (response.status === "success") {
+        window.location.assign(response.data.checkout_url); // Redirect to Chapa checkout
       } else {
-        console.error("Payment initialization failed:", response.statusText);
-        // Handle payment initialization failure
+        console.error("Payment initialization failed:", response.message);
+        // Handle payment failure appropriately (e.g., display an error message to the user)
       }
     } catch (error) {
       console.error("Payment error:", error);
