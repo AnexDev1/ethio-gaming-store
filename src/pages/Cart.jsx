@@ -41,21 +41,35 @@ const Cart = () => {
       email: "test@gmail.com",
       tx_ref: txRef,
       callback_url: "https://your-backend-callback-url", // Replace with your backend callback URL
-      return_url: "http://localhost:5173/cart", // Replace with your success page URL
+      return_url: "http://localhost:5173", // Replace with your success page URL
       customization: {
         title: "Payment for my favorite merchant",
         description: "I love online payments",
       },
     };
 
-    try {
-      const response = await myChapa.initialize(paymentData);
+    const requestOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        // Add other required headers here
+      },
+      body: JSON.stringify(paymentData),
+      mode: "no-cors", // Setting the request mode to no-cors
+    };
 
-      if (response.status === "success") {
-        window.location.assign(response.data.checkout_url); // Redirect to Chapa checkout
+    try {
+      const response = await fetch(
+        "https://api.chapa.co/v1/transaction/initialize",
+        requestOptions
+      );
+
+      if (response.status === 200) {
+        console.log("Payment initialized successfully");
+        // Handle payment initialization success
       } else {
-        console.error("Payment initialization failed:", response.message);
-        // Handle payment failure appropriately (e.g., display an error message to the user)
+        console.error("Payment initialization failed:", response.statusText);
+        // Handle payment initialization failure
       }
     } catch (error) {
       console.error("Payment error:", error);
